@@ -1,2 +1,2 @@
-# valen_valls
+# ValenValls
 This is going to be my website!
