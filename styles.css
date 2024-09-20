@@ -1,31 +1,52 @@
 :root {
     --bg-color: #f7ede4;
     --text-color: #45302d;
-    --aux-text-color: #554d5c;    
+    --aux-text-color: #554d5c;
+    --aux-bg-color: #a69890;    
+    --bold-text-color: #c72420;    
+    --colorful-color: #72974d;
+}
+body.dark-mode {
+  --bg-color: #45302d;
+  --text-color: #f7ede4;    
+  --aux-text-color: #a69890;
+  --aux-bg-color: #554d5c;
+  --bold-text-color: #db756d;
+  --colorful-color: #26893f;
+}
+header{  
+  position: fixed;
+  height: 50px;      
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%
 }
 
-header{
-    position:fixed;
-    display: inline-block;
-}
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--bg-color);    
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);    
+  transition: background-color 0.5s, color 0.5s;
+  margin: 0%;  
+  display: flex;
+}
+main {  
     
-    transition: background-color 0.5s, color 0.5s;
+  margin: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+    
 }
-main {    
-    display: flex;    
-    align-items: center;
-    justify-content: center;
-    height: 100vh;    
-    margin: 0;
+#header-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
-
-#greetings{
-    display: inline-block;
-}
-#my-name {   
+#my-name {       
     font-size: 3em;
     color: var(--aux-text-color);    
     text-align: center;
@@ -37,60 +58,117 @@ main {
     color: var(--text-color);
 }
 
-body.dark-mode {
-    --bg-color: #45302d;
-    --text-color: #f7ede4;    
-    --aux-text-color: #a69890;
+h3{
+  font-size: 3em;
+  color: var(--text-color);   
+  text-align: center;
+  
+}
+h4{
+  font-size: 1.5em;
+  text-align: center; 
+  color: var(--aux-text-color);
+  margin: 10px;
+}
+#greetings-text{
+  padding: 20vh 0;
+  width: 100%;  
+  text-align: center;
+}
+#greetings-img{
+  width: 30%;
+  display: inline-block;
+  height: auto;
+  margin-top: 10vh;
+  border-radius: 50%;  
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
-.switch {
-     
-    width: 60px;
-    height: 34px;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-  }
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #554d5c; 
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-  
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--aux-bg-color);
+  transition: .4s;
+  border-radius: 34px;
+}
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: var(--bg-color); 
-    -webkit-transition: .4s;
-    transition: .4s;
-  }  
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--text-color);
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: var(--aux-bg-color);
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+@keyframes shake {
+  0% { transform: translate(10px, 0); }
+  20% { transform: translate(0, 0); }
+  40% { transform: translate(0, 0); }
+  60% { transform: translate(0, 0); }
+  95% { transform: translate(10px, 0); }
+  100% { transform: translate(10px, 0); }
+}
+
+#loves{
+  animation: shake 2s infinite;
+  color: var(--bold-text-color);
   
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+}
+#who-text{
+  position:static;
+}
+.section {
+  height: 90vh; /* Each section takes up the full viewport height */  
+  align-items: center;
+  transition: opacity 0.5s ease-in-out;
+}
+.section.invisible {
+  opacity: 0;
+}
+
+.flex-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+@keyframes myanim {
+  from {
+    opacity: 0;
+    transform: scale(.7, .7)
   }
+  to {
+    opacity: 1;
+  }
+}
+
+.animateme {
+  animation: myanim 5s;
+}
+.noanimfornow {
+  opacity: 0;
+}

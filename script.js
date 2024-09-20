@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {    
+document.addEventListener("DOMContentLoaded", function() {   
+
 
     function typeWriter(element_id, text, speed, index = 0) {
         return new Promise((resolve) => {
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     typeWriter("hello", "Hello World!", 100)
-        .then(() => typeWriter("my-name", "Valen Valls welcomes you", 50));
+        .then(() => typeWriter("my-name", "Valen Valls welcomes you all", 50));
 
 
     const toggleCheckbox = document.getElementById("night-day");
@@ -30,5 +31,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
     toggleCheckbox.addEventListener("change", function() {          
         body.classList.toggle("dark-mode");
-    });    
+    });        
+
+    const lovesElement = document.getElementById("loves");
+    lovesElement.textContent = "Programming";
 });
+const lovesElement = document.getElementById("loves");
+const loves = ["Programming", "Learning", "Being Creative", "Solving Problems", "AI", "Games", "Animals"];
+let lovesIndex = 0;
+
+function changeText() {
+    lovesIndex = (lovesIndex + 1) % loves.length;
+    lovesElement.textContent = loves[lovesIndex];
+}
+
+setInterval(changeText, 2000);
+/*
+const image = document.getElementById('greetings-img');
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+
+function updateImageTransform() {
+    const rect = image.getBoundingClientRect();
+    const x = mouseX - rect.left - rect.width / 2;
+    const y = mouseY - rect.top - rect.height / 2;
+
+    const rotateX = Math.max(-15, Math.min(15, -y * 0.05)); // Clamp rotation between -15 and 15 degrees
+    const rotateY = Math.max(-15, Math.min(15, x * 0.05));
+
+    image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+}
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    updateImageTransform();
+});
+document.addEventListener('scroll', updateImageTransform);
+*/
+

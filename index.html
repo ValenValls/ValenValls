@@ -8,16 +8,45 @@
 </head>
 <body>
     <header> 
-        <a href="index.html">Logo</a>        
-        <label class="switch">
-            <input type="checkbox" id="night-day">
-            <span class="slider round"></span>
-        </label>
+        <a id="header-left" href="index.html">Logo</a>
+        <div id="header-right">                    
+            <a class="page-links" href="#about-me">About me</a> 
+            <a class="page-links" href="#projects">Projects</a>  
+            
+            <label id = "night-day-switch" class="toggle-switch">
+                <input type="checkbox" id="night-day">
+                <span class="slider round"></span>
+            </label>
+        </div>        
+               
     </header>
     <main>
-        <div id="greetings">
-            <h1 id="hello"></h1>
-            <h2 id="my-name"></h2>
+        <div id="greetings" class="section">
+            <div id="greetings-text">
+                <h1 id="hello"></h1>
+                <h2 id="my-name"></h2>
+            </div>
+            <!--
+            <div class="image-container">
+                <img src="img/hello_raccoon.webp" id="greetings-img" alt="Moving Image" class="moving-image">
+            </div>
+            -->            
+        </div>
+        <div id="about-me" class="section">
+            <h3 id="who-title">Who am I?</h1>
+            <div>
+            <h4 id="who-text">I'm a Software developer, Computer Science Student, Who loves   </h4> <h4 id="loves"></h4>
+            <h4 id="who-where">I´m Located in Buenos Aires, Argentina, Studied at University of Buenos Aires.</h4>
+            </div>
+        </div>
+        <div id="projects" class="section">
+            <h3>Things I've worked on</h3>
+            <div id="slide-show">
+
+            </div>
+        </div>
+        <div>
+            
         </div>
     </main>
     
