@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
     <header> 
-        <a id="header-left" href="index.html">Logo</a>
+        <div id="header-left">
+            <a id="logo" href="#greetings">Valen Valls</a>
+
+        </div>        
         <div id="header-right">                    
             <a class="page-links" href="#about-me">About me</a> 
             <a class="page-links" href="#projects">Projects</a>  
@@ -34,10 +38,12 @@
         </div>
         <div id="about-me" class="section">
             <h3 id="who-title">Who am I?</h1>
-            <div>
-            <h4 id="who-text">I'm a Software developer, Computer Science Student, Who loves   </h4> <h4 id="loves"></h4>
-            <h4 id="who-where">I´m Located in Buenos Aires, Argentina, Studied at University of Buenos Aires.</h4>
+            <h4 id="who-text">I'm a Software developer, Graduating in Computer Science </h4>            
+            <h4 id="who-where">I´m Located in Buenos Aires Argentina and Studied at University of Buenos Aires.</h4>
+            <div id="loves-container">
+                <h4>I love </h4><h4 id="loves"></h4>
             </div>
+            
         </div>
         <div id="projects" class="section">
             <h3>Things I've worked on</h3>
@@ -46,16 +52,31 @@
             </div>
         </div>
         <div id="snake" class="section"></div>
-            <h3>You scrolled too far and found The Hungry Serpent Beneath the Website</h3>
+            <h3>You scrolled too far! You found a hungry snake</h3>
             <div id="snake-minigame">
+                
                 <canvas id="board"></canvas>
+                <div id="snake-gameboard">
+                    <h4 id = "game-text"></h4>
+
+                    <div id="snake-controllers">
+                        <button id="start-button" class="game-buttons">||&#9654;</button>
+                        <button id="up-button" class="game-buttons">&#x2191;</button>
+                        <button id="restart-button" class="game-buttons">&#x21ba;</button>                      
+                        <button id="left-button" class="game-buttons">&#x2190;</button>
+                        <button id="down-button" class="game-buttons">&#x2193;</button>
+                        <button id="right-button" class="game-buttons">&#x2192;</button>       
+                                   
+                    </div>
+                </div>
+                <script src="snake.js"></script>
             </div>
         </div>
         
     </main>
     
-
     <script src="script.js"></script>
+    
     <p></p>
 </body>
 </html>
