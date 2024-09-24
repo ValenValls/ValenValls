@@ -1,4 +1,7 @@
 let blockSize = 25;
+if (screen.width <725){
+    let blockSize = 15;
+}
 let total_row = 17; //total row number
 let total_col = 17; //total column number
 let board;
@@ -18,7 +21,7 @@ let foodY;
 
 let gameOver = false;
 let paused = true;
-let boardColor= getComputedStyle(document.body).getPropertyValue('--text-color')
+let boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
 let snakeColor= getComputedStyle(document.body).getPropertyValue('--bg-color')
 let text = document.getElementById("game-text");
 
@@ -66,7 +69,7 @@ window.onload = function () {
     setInterval(update, 1000 / 10);
 }
 function reset(){
-    boardColor= getComputedStyle(document.body).getPropertyValue('--text-color')
+    boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
     snakeColor= getComputedStyle(document.body).getPropertyValue('--bg-color')
     snakeBody = [];
     speedX = 0;  
@@ -199,11 +202,13 @@ function placeFood() {
 }
 
 function togglePause() {
-    paused = !paused; // Toggle the paused flag
-    if(paused){
-        text.innerHTML = "GAME PAUSED"
-    }
-    else{
-        text.innerHTML = ""
-    }
+    if(!gameOver){
+        paused = !paused; // Toggle the paused flag
+        if(paused){
+            text.innerHTML = "GAME PAUSED"
+        }
+        else{
+            text.innerHTML = ""
+        }
+    }    
 }
