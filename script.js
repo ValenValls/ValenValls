@@ -46,28 +46,40 @@ function changeText() {
 }
 
 setInterval(changeText, 2000);
-/*
-const image = document.getElementById('greetings-img');
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
 
-function updateImageTransform() {
-    const rect = image.getBoundingClientRect();
-    const x = mouseX - rect.left - rect.width / 2;
-    const y = mouseY - rect.top - rect.height / 2;
 
-    const rotateX = Math.max(-15, Math.min(15, -y * 0.05)); // Clamp rotation between -15 and 15 degrees
-    const rotateY = Math.max(-15, Math.min(15, x * 0.05));
 
-    image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+function copyEmailToClipboard() {
+    const email = "valentinvalls@hotmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        alert("Email address copied to clipboard!");
+    }).catch(err => {
+        console.error("Failed to copy email: ", err);
+    });
 }
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    updateImageTransform();
+const buttons = document.querySelectorAll("[data-carousel-button]");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    moveSlides(button.dataset.carouselButton === "next" ? 1 : -1);
+  });
 });
-document.addEventListener('scroll', updateImageTransform);
-*/
+
+function moveSlides(offset) {
+  const slides = document.querySelector("[data-slides]");
+  const activeSlide = slides.querySelector("[data-active]");
+  let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+  if (newIndex < 0) newIndex = slides.children.length - 1;
+  if (newIndex >= slides.children.length) newIndex = 0;
+
+  slides.children[newIndex].dataset.active = true;
+  delete activeSlide.dataset.active;
+}
+
+const intervalTime = 10000; 
+setInterval(() => {
+  moveSlides(1);
+}, intervalTime);
 
 

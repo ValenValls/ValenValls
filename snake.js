@@ -22,13 +22,14 @@ let foodY;
 let gameOver = false;
 let paused = true;
 let boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
-let snakeColor= getComputedStyle(document.body).getPropertyValue('--bg-color')
+let snakeColor= getComputedStyle(document.body).getPropertyValue('--aux-bg-color')
 let text = document.getElementById("game-text");
 
 window.onload = function () {
     // Set board height and width
     board = document.getElementById("board");
-    snakeColor= getComputedStyle(document.body).getPropertyValue('--bg-color')
+    let boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
+    let snakeColor= getComputedStyle(document.body).getPropertyValue('--aux-bg-color')
     board.height = total_row * blockSize;
     board.width = total_col * blockSize;
     context = board.getContext("2d");
@@ -69,8 +70,8 @@ window.onload = function () {
     setInterval(update, 1000 / 10);
 }
 function reset(){
-    boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
-    snakeColor= getComputedStyle(document.body).getPropertyValue('--bg-color')
+    let boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
+    let snakeColor= getComputedStyle(document.body).getPropertyValue('--aux-bg-color')
     snakeBody = [];
     speedX = 0;  
     speedY = 0;
@@ -84,8 +85,8 @@ function reset(){
     
 }
 function update() {
-    boardColor= getComputedStyle(document.body).getPropertyValue('--text-color')
-    snakeColor= getComputedStyle(document.body).getPropertyValue('--bg-color')
+    let boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
+    let snakeColor= getComputedStyle(document.body).getPropertyValue('--aux-bg-color')
 
     // Background of a Game
     context.fillStyle = boardColor;
