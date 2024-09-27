@@ -1,24 +1,21 @@
-:root {
-    --bg-color: #ffffff;
-    --aux-bg-color: #a5a5a5;
-    --text-color: #0e1113;
-    --aux-text-color:  #181c1f;        
-    --bold-text-color: #ec4217;    
-    --colorful-color: #140f9b;
-    --aux-colorful-color: #4b5dc4;
-    /*--icons-filter: invert(4%) sepia(4%) saturate(2900%) hue-rotate(161deg) brightness(91%) contrast(94%);*/
-    --icons-filter: invert(19%) sepia(98%) saturate(7269%) hue-rotate(248deg) brightness(60%) contrast(114%);
+:root{
+--text: #746857;
+--background: #fbedda;
+--primary: #d8be91;
+--secondary: #30522d;
+--accent: #437a56;
+
+
+--accent-filter: invert(41%) sepia(59%) saturate(297%) hue-rotate(88deg) brightness(88%) contrast(90%);
 }
-body.dark-mode {
-  --bg-color: #090C02;
-  --aux-bg-color: #111111;   
-  --text-color: #E6EED6;    
-  --aux-text-color:  #a5a5a5;  
-  --colorful-color: #A72608;
-  --aux-colorful-color: #140f9b;
-  --icons-filter: invert(38%) sepia(9%) saturate(6232%) hue-rotate(203deg) brightness(89%) contrast(89%);
+body.dark-mode { 
+
+--text: #faead1;
+--background: #381505;  
+--accent: #508f66;
   
 }
+
 header{  
   position: fixed;
   height: 50px;      
@@ -26,19 +23,21 @@ header{
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: var(--bg-color);
   font-family: Arial, sans-serif;
   transition: background-color 0.5s, color 0.5s;  
-  border-bottom: 2px solid var(--colorful-color);
+  
   padding-left: 10px;
   padding-right: 10px;
   z-index: 1000;
 
 }
 #logo{
-  color: var(--colorful-color);
+  color: var(--accent);
   text-decoration: inherit;
-  font-size:1.5em;
+  font-size:2em;
+  background-color: var(--primary);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 #header-middle{
@@ -46,13 +45,19 @@ header{
   align-items: center;  
   flex-direction: row;  
   border-bottom: none;
+  background-color: var(--primary);
+  border-radius: 5px;
+  padding: 5px;
+  
+
 }
 
 .link-icon img {
   width: 30px;
   height: 30px;
   transition: transform 0.3s ease;
-  filter: var(--icons-filter);
+  filter: var(--accent-filter);
+  
 }
 
 .link-icon:hover img {  
@@ -79,21 +84,28 @@ header{
 a{
   text-decoration: none;
 }
+
+#header-right{
+  background-color: var(--primary);
+  border-radius: 5px;
+  padding: 5px;
+}
 .page-links{
-  color: var(--colorful-color);
+  color: var(--accent);
   text-decoration: inherit;
   transition: transform 0.3s ease;
   font-size:1em;
+  
 }
 
 .page-links:hover{
-  color: var(--aux-colorful-color);  
+  color: var(--secondary);  
 }
 
 
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--bg-color);    
+  background-color: var(--background);    
   transition: background-color 0.5s, color 0.5s;
   margin: 0%;  
   display: flex;
@@ -116,26 +128,26 @@ main {
 }
 #my-name {       
     font-size: 3em;
-    color: var(--aux-text-color);    
+    color: var(--text);    
     text-align: center;
 }
 
 #hello {
     font-size: 5em;
     text-align: center;
-    color: var(--colorful-color);
+    color: var(--accent);
 }
 
 h3{
   font-size: 3em;
-  color: var(--colorful-color);  
+  color: var(--accent);  
   text-align: center;
   
 }
 h4{
   font-size: 1.5em;
   text-align: center; 
-  color: var(--aux-text-color);
+  color: var(--text);
   margin: 10px;
 }
 #greetings-text{
@@ -160,7 +172,7 @@ h4{
 
 #loves{
   animation: shake 2s infinite;
-  color: var(--bold-text-color);  
+  color: var(--accent);  
   text-align: center;
   width: 5vw;
   z-index: 1; 
@@ -187,7 +199,7 @@ h4{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--aux-bg-color);
+  background-color: var(--background);
   transition: .4s;
   border-radius: 34px;
 }
@@ -198,12 +210,12 @@ h4{
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: var(--text-color);
+  background-color: var(--accent);
   transition: .4s;
   border-radius: 50%;
 }
 input:checked + .slider {
-  background-color: var(--aux-bg-color);
+  background-color: var(--background);
 }
 input:checked + .slider:before {
   transform: translateX(26px);
@@ -231,6 +243,14 @@ input:checked + .slider:before {
   align-items: center;
   position: relative;
   flex-direction: row;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #30522d;
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+  padding: 10px;
 }
 
 .carousel > ul {
@@ -245,6 +265,7 @@ input:checked + .slider:before {
   opacity: 0;
   transition: 200ms opacity ease-in-out;
   transition-delay: 200ms;
+  
 }
 
 .car[data-active] {
@@ -297,20 +318,40 @@ input:checked + .slider:before {
   grid-auto-rows: minmax(100px, auto);
   height: 60vh;
   width: 60vw;
+  
+  
 }
 
 .project-title{
   grid-column:  1;
   grid-row: 1;
+  font-size: 2em;
+  color: var(--accent);
+  align-self: center;
+  justify-self: center;
+  text-align: center;
 }
 
 .project-description{
   grid-column:  1;
   grid-row: 2/4;
+  color: var(--text);
+  
+  
+  text-align: center;
+  justify-self: center;
 }
 .project-skills{
   grid-column:  1/ 3;
   grid-row: 4;
+  color: var(--secondary);
+  padding: 2px;
+  background-color: var(--primary);
+  transition: background-color 0.5s, color 0.5s;
+  align-self: center;
+  justify-self: center;
+  padding: 10px;
+  border-radius: 10px;
 }
 .project-img{
   grid-column: 2/4;
@@ -319,12 +360,31 @@ input:checked + .slider:before {
   height: 100%;
   object-fit: cover;
   justify-self: end;
+  border: thick double var(--accent);
+  border-radius: 10px;
+  
 
 }
 .project-link{
   grid-column: 3;
   grid-row: 4;
   justify-self: end;
+  justify-content: space-between;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  height: 20px;
+  width: 180px;
+  background-color: var(--primary);
+  transition: background-color 0.5s, color 0.5s;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.project-visit{
+  color: var(--accent);
 }
 
 
@@ -342,7 +402,7 @@ input:checked + .slider:before {
 }
 
 #game-text{
-  color: var(--bold-text-color);
+  color: var(--text);
   font-size: smaller;
   animation: blinker 2s linear infinite;
   width: 300px;
@@ -366,11 +426,11 @@ input:checked + .slider:before {
   align-items: center;
   width: 100px;
   height: 100px; 
-  background-color: var(--text-color);
+  background-color: var(--primary);
   border-radius: 50px;
   text-align:left;
-  color: var(--aux-bg-color);
+  color: var(--accent);
 }
 .game-buttons:hover{
-  background-color: var(--aux-text-color);
+  background-color: var(--background);
 }

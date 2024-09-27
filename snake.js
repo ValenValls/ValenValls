@@ -21,15 +21,13 @@ let foodY;
 
 let gameOver = false;
 let paused = true;
-let boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
-let snakeColor= getComputedStyle(document.body).getPropertyValue('--aux-bg-color')
+let boardColor= getComputedStyle(document.body).getPropertyValue('--primary')
+let snakeColor= getComputedStyle(document.body).getPropertyValue('--accent')
 let text = document.getElementById("game-text");
 
 window.onload = function () {
     // Set board height and width
-    board = document.getElementById("board");
-    let boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
-    let snakeColor= getComputedStyle(document.body).getPropertyValue('--aux-bg-color')
+    board = document.getElementById("board");    
     board.height = total_row * blockSize;
     board.width = total_col * blockSize;
     context = board.getContext("2d");
@@ -70,8 +68,8 @@ window.onload = function () {
     setInterval(update, 1000 / 10);
 }
 function reset(){
-    let boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
-    let snakeColor= getComputedStyle(document.body).getPropertyValue('--aux-bg-color')
+    boardColor= getComputedStyle(document.body).getPropertyValue('--primary')
+    snakeColor= getComputedStyle(document.body).getPropertyValue('--accent')
     snakeBody = [];
     speedX = 0;  
     speedY = 0;
@@ -85,8 +83,8 @@ function reset(){
     
 }
 function update() {
-    let boardColor= getComputedStyle(document.body).getPropertyValue('--aux-text-color')
-    let snakeColor= getComputedStyle(document.body).getPropertyValue('--aux-bg-color')
+    boardColor= getComputedStyle(document.body).getPropertyValue('--primary')
+    snakeColor= getComputedStyle(document.body).getPropertyValue('--accent')
 
     // Background of a Game
     context.fillStyle = boardColor;
@@ -195,11 +193,26 @@ function changeDirection(e) {
 // Randomly place food
 function placeFood() {
 
-    // in x coordinates.
-    foodX = Math.floor(Math.random() * total_col) * blockSize; 
     
-    //in y coordinates.
+    foodX = Math.floor(Math.random() * total_col) * blockSize;
     foodY = Math.floor(Math.random() * total_row) * blockSize;
+
+    while(foodInSnake(foodX,foodY)){        
+        foodX = Math.floor(Math.random() * total_col) * blockSize;   
+        foodY = Math.floor(Math.random() * total_row) * blockSize;
+    }
+}
+
+function foodInSnake(fX, fY){
+    if(snakeX == foodX && snakeY == foodY){
+        return true;
+    }
+    for (let i = 0; i < snakeBody.length; i++) {        
+        if (fX == snakeBody[i][0] && fY ==  snakeBody[i][1]){
+            return true;
+        }
+    }
+    return false;
 }
 
 function togglePause() {
