@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     lovesElement.textContent = "Programming";
 });
 const lovesElement = document.getElementById("loves");
-const loves = ["Programming", "Learning", "Being Creative", "Solving Problems", "AI", "Games", "Animals"];
+const loves = ["Programming", "Learning", "Being Creative", "Solving Problems", "AI", "Boardgames", "Animals"];
 let lovesIndex = 0;
 
 function changeText() {

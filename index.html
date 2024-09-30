@@ -18,7 +18,7 @@
                 <img src="icons/linkedin.svg" alt="LinkedIn">
             </a>
             <a href="https://github.com/ValenValls" target="_blank" class="link-icon"><img src="icons/github.svg" alt="github" title="Go to GitHub Profile"></a>           
-            <a href="doc/CV-24_09_2024.pdf" download="CV-VV.pdf" class="link-icon" title="Download CV">
+            <a href="doc/CV-VV.pdf" download="CV-VV.pdf" class="link-icon" title="Download CV">
                 <img src="icons/cv.svg" alt="Download CV">
             </a>   
             <a href="mailto:valentinvalls@hotmail.com" class="link-icon" title="Send me an Email" onclick="copyEmailToClipboard()"><img src="icons/mail.svg" alt="Email">
@@ -52,69 +52,86 @@
         </div>
         <div id="about-me" class="section">
             <h3 id="who-title">Who am I?</h1>
-            <h4 id="who-text">I'm a Software developer and a Computer Science student in his final year. </h4>            
-            <h4 id="who-where">I´m Located in Buenos Aires Argentina and attend the University of Buenos Aires.</h4>
+            <p id="who-text">I am a <b>Software Developer</b> and a <b>Computer Science student</b> in my final year at the <b>University of Buenos Aires</b> in Buenos Aires, Argentina. <br><br>        
+            I started coding in High school around 2014, which had an IT orientation. <br><br> 
+            In my latest studies, I have focused on <b>Machine Learning</b>, <b>Data science</b> and <b>AI</b>.</p> 
             <div id="loves-container">
                 <h4>I love </h4><h4 id="loves"></h4>
             </div>
-            <h4>I started coding at High school in 2014, which had an IT orientation.</h4>
-            <h4>My interest in Computer Science grew as I wanted to delve deeper into programming.</h4> 
-            <h4>In my latest studies I focused on Machine Learning, Data science and AI.</h4> 
+            
                 
             
             
         </div>
         <div id="projects" class="section">
-            <h3>Here are some things I've worked on</h3>
-            <div class="carousel" data-carousel>
-                               
+            <h3>Some things I've worked on</h3>
+            <div class="carousel" data-carousel>                               
                 <ul data-slides>
                     <li class="car">
                         <div class="car-content">
-                            
-                                <p class="project-title"> Chat Room Platform With LLM bots integration for running experiments</p>
+                            <div class="project-title-container">
+                                <p class="project-title"> Chatroom Platform with LLM Bots participants</p>
+                            </div>                      
+                            <div class="project-description-container">
                                 <p class="project-description">The Application is used to have participants complete polls and then debate their answers in group chats, for Psychological and Neuroscientific research.
                                     <br><br> As part of my Bachelor's Thesis, I developed the feature of adding LLM bots to the debates to further analyse the interactions of humans with AI.
                                 </p>
-                                <p class="project-skills">Featured Skills used: Python, Django, APIs, Prompt Engineering</p>
-                            
-                                <img class="project-img" src="img/chat-room.png">
+                            </div>
+                            <div class="project-type-container">
+                                <p class="project-type">Thesis</p>
+                            </div>
+                            <div class="project-skills-container">
+                            <p class="project-skills">Featured Skills: <br> Python <br> Django <br> APIs <br> Prompt Engineering</p>
+                            </div>
+                            <div class="project-link-container">
                                 <a href="https://github.com/facuzeta/chat-room-platform" class="project-link link-icon">
-                                    <p class="project-visit">Visit the repository  </p>
+                                    <p class="project-visit">Go to repo&emsp;</p>
                                     <img src="icons/gitbook.svg"  alt="Go to repository">   </a> 
-                                
-                                                   
+                            </div>
                         </div>
                       </li>   
                   <li class="car" data-active>
-                    <div class="car-content">                        
+                    <div class="car-content">  
+                        <div class="project-title-container">
                             <p class="project-title"> MIDI Piano Music Generator</p>
+                        </div>                      
+                        <div class="project-description-container">
                             <p class="project-description"> A tool to train a LSTM model to generate music. You can then use trained models to generate MIDI Files.
                             </p>
-                            <p class="project-skills">Featured Skills used: Python, PyTorch</p>                       
-                        
-                            <img class="project-img" src="img/midi.png">
+                        </div>
+                        <div class="project-type-container">
+                            <p class="project-type">Personal project</p>
+                        </div>
+                        <div class="project-skills-container">
+                            <p class="project-skills">Featured Skills: <br> Python <br> PyTorch</p>
+                        </div>
+                        <div class="project-link-container">
                             <a href="https://github.com/ValenValls/music-generation" class="project-link link-icon">
-                                <p class="project-visit">Visit the repository  </p>
+                                <p class="project-visit">Go to repo&emsp;</p>
                                 <img src="icons/gitbook.svg"  alt="Go to repository">   </a> 
-                    </div>                           
-
-                        
-                    
+                        </div>                    
+                    </div>                    
                   </li>
                   <li class="car">
                     <div class="car-content">
-                        
+                        <div class="project-title-container">
                             <p class="project-title"> This Website!</p>
+                        </div>                      
+                        <div class="project-description-container">
                             <p class="project-description"> I designed this website using HTML, CSS and JS as a challenge and to test the power of it.
-                            <p class="project-skills">Featured Skills used: HTML, CSS, JS</p>
-                        
-                            <img class="project-img" src="img/recursive.png">
+                            </p>
+                        </div>
+                        <div class="project-type-container">
+                            <p class="project-type">Personal project</p>
+                        </div>
+                        <div class="project-skills-container">
+                        <p class="project-skills">Featured Skills: <br> HTML<br> CSS<br> JS</p>
+                        </div>
+                        <div class="project-link-container">
                             <a href="https://github.com/ValenValls/ValenValls" class="project-link link-icon">
-                                <p class="project-visit">Visit the repository  </p>
+                                <p class="project-visit">Go to repo&emsp;</p>
                                 <img src="icons/gitbook.svg"  alt="Go to repository">   </a> 
-                           
-                                                   
+                        </div>
                     </div>
                   </li> 
                                   
@@ -126,8 +143,6 @@
                 <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
 
               </div>
-              
-            
         </div>
         <div id="snake" class="section">
             <h3>You scrolled too far! You found a hungry snake.</h3>
