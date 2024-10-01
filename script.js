@@ -82,4 +82,13 @@ setInterval(() => {
   moveSlides(1);
 }, intervalTime);
 
-
+function scrollToCenter(event, sectionId) {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    const sectionRect = section.getBoundingClientRect();
+    const offset = (window.innerHeight - sectionRect.height) / 2;
+    window.scrollTo({
+        top: sectionRect.top + window.scrollY - offset,
+        behavior: 'smooth'
+    });
+}

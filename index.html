@@ -10,9 +10,10 @@
     
     <header> 
         <div id="header-left">
-            <a id="logo" href="#greetings">Valen Valls</a>
+            <a id="logo" href="#greetings" onclick="scrollToCenter(event, 'greetings')">Valen Valls</a>
 
         </div>        
+        <!--
         <div id="header-middle">
             <a href="https://linkedin.com/in/valenvalls" target="_blank" class="link-icon" title="Go to LinkedIn Profile">
                 <img src="icons/linkedin.svg" alt="LinkedIn">
@@ -23,19 +24,19 @@
             </a>   
             <a href="mailto:valentinvalls@hotmail.com" class="link-icon" title="Send me an Email" onclick="copyEmailToClipboard()"><img src="icons/mail.svg" alt="Email">
             </a>
-            
-                
-            
+        -->
         </div>
-        <div id="header-right">                    
-            <a class="page-links" href="#about-me">About me</a> 
-            <a class="page-links" href="#projects">Projects</a>  
+        <div id="header-right" class="topnav">                    
+            <a class="page-links" href="#about-me" onclick="scrollToCenter(event, 'about-me')">About me</a> 
+            <a class="page-links" href="#projects" onclick="scrollToCenter(event, 'projects')">Projects</a> 
+            <a class="page-links" href="#contact-me" onclick="scrollToCenter(event, 'contact-me')">Contact me</a>   
             
             <label id = "night-day-switch" class="toggle-switch">
                 <input type="checkbox" id="night-day">
                 <span class="slider round"></span>
             </label>
-        </div>        
+        </div>   
+        
                
     </header>
     <main>
@@ -57,11 +58,7 @@
             In my latest studies, I have focused on <b>Machine Learning</b>, <b>Data science</b> and <b>AI</b>.</p> 
             <div id="loves-container">
                 <h4>I love</h4><h4 id="loves"></h4>
-            </div>
-            
-                
-            
-            
+            </div>    
         </div>
         <div id="projects" class="section">
             <h3>Some things I've worked on</h3>
@@ -143,6 +140,40 @@
                 <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
 
               </div>
+        </div>
+        <div id="contact-me" class="section">
+            <h3>My Contact Info</h3>
+            <div id="contact-container">
+                <div class="contact-item">
+                    <a href="https://linkedin.com/in/valenvalls" target="_blank" class="link-icon" title="Go to LinkedIn Profile">
+                        <p>My LinkedIn Account</p>
+                        <img src="icons/linkedin.svg" alt="LinkedIn">
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://github.com/ValenValls" target="_blank" class="link-icon">
+                        <p>My GitHub Account</p>
+                        <img src="icons/github.svg" alt="github" title="Go to GitHub Profile">
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="doc/CV-VV.pdf" download="CV-VV.pdf" class="link-icon" title="Download CV">
+                        <p>Download my CV</p>
+                        <img src="icons/cv.svg" alt="Download CV">
+                    </a>   
+                </div>    
+                <div class="contact-item">
+                    
+                    <a href="mailto:valentinvalls@hotmail.com" class="link-icon" title="Send me an Email" onclick="copyEmailToClipboard()"> 
+                        <p>Email me at <strong>valentinvalls@hotmail.com</strong></p><img src="icons/mail.svg" alt="Email">
+                    </a>  
+                </div>
+                
+                            
+                                            
+                
+
+            </div>
         </div>
         <div id="snake" class="section">
             <h3>You scrolled too far! You found a hungry snake.</h3>

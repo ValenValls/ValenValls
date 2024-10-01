@@ -50,7 +50,7 @@ header{
 #logo{
   color: var(--accent);
   text-decoration: inherit;
-  font-size:clamp(16px, 2vw, 36px);
+  font-size:clamp(20px, 3vw, 46px);
   font-weight: bold;
   
 }
@@ -64,8 +64,9 @@ header{
   padding-left: 5px;
   padding-right: 5px;
   height: 100%;
+  width: 15%;
 }
-
+/*
 #header-middle{
   display: flex;
   justify-content: space-around;
@@ -81,6 +82,7 @@ header{
   height: 100%;
   max-width: clamp(110px,20%,220px);
 }
+  */
 
 #header-right{
   display: flex;
@@ -91,7 +93,19 @@ header{
   height: 100%; 
   justify-content: space-around;
   align-items: center; 
-  gap: 5px;
+  gap: 10px;
+  
+}
+
+.link-icon{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items:center;
+}
+.link-icon p{
+  color: var(--accent);
   
 }
 
@@ -133,9 +147,12 @@ a{
   color: var(--accent);
   text-decoration: inherit;
   transition: transform 0.3s ease;
-  font-size: clamp(16px, 2vw, 36px);
+  font-size: clamp(10px, 2vw, 36px);
   font-weight: bold;
-  
+  background-color: var(--background);
+  transition: background-color 0.5s, color 0.5s;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .page-links:hover{
@@ -262,7 +279,7 @@ input:checked + .slider:before {
 .section {
   display: flex;
   flex-direction: column;
-  height: 100vh;     
+  height: 80vh;     
   justify-content: center;
   align-items: center;
   transition: opacity 0.5s ease-in-out;  
@@ -272,8 +289,9 @@ input:checked + .slider:before {
 }
 
 .carousel {
-  width: 50vw;
-  height: 30vh;    
+  
+  width: clamp(300px,80vw,600px);
+  height: 50vh;    
   display: flex;
   justify-content: center;
   align-items: center;
@@ -332,6 +350,7 @@ input:checked + .slider:before {
   cursor: pointer;
   border-radius: .25rem;
   padding: 0 .5rem;
+  transition: background-color 0.5s, color 0.5s;
   background-color: var(--background);
 }
 
@@ -447,7 +466,6 @@ input:checked + .slider:before {
 }
 
 
-
 #snake-gameboard{
   display: flex;
   align-items: center;
@@ -501,5 +519,11 @@ input:checked + .slider:before {
   header {
       background-color: var(--primary); 
       border-radius: 5px;
+  }
+}
+
+@media (max-width: 366px) {
+  input:checked + .slider:before {
+    transform: translateX(16px);
   }
 }

@@ -1,6 +1,6 @@
 let blockSize = 25;
 if (screen.width <725){
-    blockSize = 15;
+    blockSize = 10;
 }
 let total_row = 17; //total row number
 let total_col = 17; //total column number
